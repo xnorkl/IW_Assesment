@@ -1,0 +1,121 @@
+IW_Assesment/task5 on  master [?] 
+[I] ➜ gdb dbg_task_5.exe
+GNU gdb (GDB) 8.3.1
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-pc-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from dbg_task_5.exe...
+(gdb) break BabyGroot::Speak()
+Breakpoint 1 at 0x1196: file task_5.cpp, line 9.
+(gdb) break Groot::Speak()
+Breakpoint 2 at 0x11ce: file task_5.cpp, line 18.
+(gdb) break A()
+Breakpoint 3 at 0x1201: file task_5.cpp, line 21.
+(gdb) break B()
+Breakpoint 4 at 0x128d: file task_5.cpp, line 30.
+(gdb) break 23
+Breakpoint 5 at 0x1238: file task_5.cpp, line 23.
+(gdb) break 25
+Breakpoint 6 at 0x124e: file task_5.cpp, line 25.
+(gdb) break 26
+Breakpoint 7 at 0x1261: file task_5.cpp, line 26.
+(gdb) break 31
+Breakpoint 8 at 0x12b5: file task_5.cpp, line 31.
+(gdb) break 32
+Breakpoint 9 at 0x12d5: file task_5.cpp, line 32.
+(gdb) break 33
+Breakpoint 10 at 0x12f5: file task_5.cpp, line 33.
+(gdb) break 34
+Breakpoint 11 at 0x12fd: file task_5.cpp, line 34.
+(gdb) run
+Starting program: /home/xnor/Development/IW_Assesment/task5/dbg_task_5.exe 
+/usr/lib/../share/gcc-9.2.0/python/libstdcxx/v6/xmethods.py:731: SyntaxWarning: list indices must be integers or slices, not str; perhaps you missed a comma?
+  refcounts = ['_M_refcount']['_M_pi']
+
+Breakpoint 3, A () at task_5.cpp:21
+21	void A() {
+(gdb) n
+22	  std::cout << "== A ==" << std::endl;
+(gdb) n
+== A ==
+
+Breakpoint 5, A () at task_5.cpp:23
+23	  BabyGroot baby;
+(gdb) n
+24	  Groot groot;
+(gdb) n
+
+Breakpoint 6, A () at task_5.cpp:25
+25	  baby=groot;
+(gdb) n
+
+Breakpoint 7, A () at task_5.cpp:26
+26	  baby.Speak();
+(gdb) n
+
+Breakpoint 1, BabyGroot::Speak (this=0x7fffffffe398) at task_5.cpp:9
+9	  std::cout << "i am groot" << std::endl;
+(gdb) n
+i am groot
+10	}
+(gdb) n
+A () at task_5.cpp:27
+27	}
+(gdb) n
+main () at task_5.cpp:40
+40	  B();
+(gdb) n
+
+Breakpoint 4, B () at task_5.cpp:30
+30	  std::cout << "== B ==" << std::endl;
+(gdb) n
+== B ==
+
+Breakpoint 8, B () at task_5.cpp:31
+31	  BabyGroot *baby=new BabyGroot();
+(gdb) n
+
+Breakpoint 9, B () at task_5.cpp:32
+32	  Groot *groot=new Groot();
+(gdb) n
+
+Breakpoint 10, B () at task_5.cpp:33
+33	  baby=groot;
+(gdb) n
+
+Breakpoint 11, B () at task_5.cpp:34
+34	  baby->Speak();
+(gdb) n
+
+Breakpoint 2, Groot::Speak (this=0x55555556b2e0) at task_5.cpp:18
+18	  std::cout << "I am Groot!" << std::endl;
+(gdb) n
+I am Groot!
+19	}
+(gdb) n
+B () at task_5.cpp:36
+36	}
+(gdb) n
+main () at task_5.cpp:41
+41	  return 0;
+(gdb) n
+42	}
+(gdb) n
+0x00007ffff7a9a153 in __libc_start_main () from /usr/lib/libc.so.6
+(gdb) n
+Single stepping until exit from function __libc_start_main,
+which has no line number information.
+[Inferior 1 (process 900772) exited normally]
+(gdb) 
+

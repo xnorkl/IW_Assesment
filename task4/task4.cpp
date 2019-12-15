@@ -28,6 +28,7 @@ void Post(Groot *groot) {
 }
 
 void Report(Groot *groot) {
+  groot->Speak();
   groot->lSpeak();
 }
 
